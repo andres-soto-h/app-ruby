@@ -1,5 +1,9 @@
 class PagesController < ApplicationController
+
+layout "custom_layout", only: [:hello] #Define un custom layout para este controlador
+
   def home
+    #render html: "<h1>Hola Andrés desde home</h1>".html_safe
   end
 
   def about_us
@@ -10,14 +14,13 @@ class PagesController < ApplicationController
     @saludo="Estas en el contact"
   end
 
-  def post
-    @saludo="Estas en post"
+  def hello
+    @name=params[:name]
   end
 
-  #about_us
-
-  #contact
-
-  #posts
+  def post
+    @posts=Post.all
+    #render layout: "custom_layout"
+  end
 
 end
