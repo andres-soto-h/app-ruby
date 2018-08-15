@@ -8,7 +8,15 @@
 <h1><%= @var %></h1>
 
     <% @posts.each do |post| %>
-        <li><%= post.title %> - <%= post.body %> </li>
+        <li><%= post.title %> - <%= post.body %> - Creado por: 
+        
+        <% if !post.user.nil? %> 
+            <%= post.user.email %> 
+        <% else %>
+            No existe usuario asociado.    
+        <% end %>
+        </li>
+
     <% end %>
 
 </ul>

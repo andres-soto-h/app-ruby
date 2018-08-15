@@ -1,11 +1,11 @@
-<h1>Pages#post</h1>
+<h1>Pages#post Change</h1>
 <h2><%= @saludo%></h2>
 <p>Find me in app/views/pages/about_us.html.erb</p>
 
 
 <ul>
     <% @posts.each do |post| %>
-        <li><%= post.title %> - <%= post.body %> </li>
+        <li><%= post.title %> - <%= post.body %> - Creado por: <%= post.user %> </li>
     <% end %>
 
 </ul>
