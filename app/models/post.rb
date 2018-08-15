@@ -9,4 +9,18 @@ class Post < ApplicationRecord
     # def self.published
     #     where(published: true)
     # end
+
+    after_create :print_message
+    #after_create :mark_as_published
+
+    private
+    
+    def print_message
+        puts "Artículo creado!"
+    end
+
+    # def mark_as_published
+    #   self.published=true
+    # end
+
 end
