@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :products
+  #resources :products, only:[]
   get 'posts/index'
   get 'pages/home'
   root 'pages#home'
@@ -10,4 +12,5 @@ Rails.application.routes.draw do
   # get 'pages/contact'
   # get 'pages/post'
   # get '/about_us', to: 'pages#about_us'
+  #resources :post
 end
